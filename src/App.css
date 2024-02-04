@@ -1,42 +1,130 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* ==================== *\
+# Google Fonts
+\* ==================== */
+@import url(https://fonts.googleapis.com/css?family=Caveat:regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* ==================== *\
+# Variable CSS
+\* ==================== */
+:root {
+  /* ====== Light Theme Color ====== */
+  --primary-color-light: #fec925;
+  --font-color-light: #233137;
+  --bg-color-light: #e5e5e5;
+  /* ====== Dark Theme Color ====== */
+  --primary-color-dark: #fec925;
+  --font-color-dark: #e5e5e5;
+  --bg-color-dark: #233137;
+  /* ======  Typography ====== */
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Caveat", cursive;
+  /* ====== Font Weight ====== */
+  --bold-weight: 700;
+  --medium-weight: 500;
+  --semibold-weight: 600;
+  /* ====== Box Shadow ====== */
+  --box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  /* ====== Border Radius ====== */
+  --primary-border-radius: 4px;
+  --secondary-border-radius: 8px;
+  /* ======  Font Size ====== */
+  --h1-font-size: 2.3rem;
+  --h2-font-size: 2.1rem;
+  --h3-font-size: 1.9rem;
+  --h4-font-size: 1.7rem;
+  --h5-font-size: 1.5rem;
+  --h6-font-size: 1.3rem;
+  /* ====== Body Font Size ====== */
+  --body-font-size: 1rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ==================== *\
+# RESPONSIVE
+\* ==================== */
+@media screen and (max-width: 1024px) {
+  :root {
+    --h1-font-size: 2.2rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.8rem;
+    --h4-font-size: 1.6rem;
+    --h5-font-size: 1.4rem;
+    --h6-font-size: 1.2rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --h1-font-size: 2.1rem;
+    --h2-font-size: 1.9rem;
+    --h3-font-size: 1.7rem;
+    --h4-font-size: 1.5rem;
+    --h5-font-size: 1.3rem;
+    --h6-font-size: 1.1rem;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ==================== *\
+# RESET
+\* ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.card {
-  padding: 2em;
+html {
+  font-size: 12px;
+  /* Actual Font Size is 1rem = 16px but we customized our Font Size into 1rem = 12px */
+  scroll-behavior: smooth;
 }
-
-.read-the-docs {
-  color: #888;
+body,
+button,
+input,
+textarea {
+  font-family: var(--primary-font);
+  font-size: var(--body-font-size);
+}
+body {
+  line-height: 1.5;
+  font-size: var(--h5-font-size);
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+h1 {
+  font-size: var(--h1-font-size);
+}
+h2 {
+  font-size: var(--h2-font-size);
+}
+h3 {
+  font-size: var(--h3-font-size);
+}
+h4 {
+  font-size: var(--h4-font-size);
+}
+h5 {
+  font-size: var(--h5-font-size);
+}
+h6 {
+  font-size: var(--h6-font-size);
+}
+ul {
+  list-style: none;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+::-webkit-scrollbar {
+  display: none;
 }
