@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #8dff69;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+    scroll-behavior: smooth;
+  }
+  body {
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  /* Custom Scrollbar */
+  ::--webkit-scrollbar {
+    width: 10px;
+  }
+  ::--webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::--webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8dff69, #6fe047);
+    border-radius: 5px;
+  }
+  ::--webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a8ff8d, #5bc92e);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #6fe047 #0a0a0a;
+  }
+
+  /* Hide scrollbar for carousel */
+  .hide-scrollbar {
+    --ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* Utility Classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+  .animate-pulse {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  /* Line Clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    --webkit-line-clamp: 2;
+    --webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    --webkit-line-clamp: 3;
+    --webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
